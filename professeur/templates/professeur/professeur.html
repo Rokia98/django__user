@@ -1,0 +1,224 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon Etab - Élèves</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+         body{
+            display: flex;
+            /* justify-content: center; Centrage horizontal */
+            /* align-items: center; Centrage vertical */
+            height: 100vh; /* Hauteur du viewport */
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+    width: 250px;
+    background: #b6adad;
+    color:#0c0c0c;
+    padding: 15px;
+    /* position: fixed; */
+    height: 100%;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #070707;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    color: #5833dd;
+    padding-left: 10px;
+    transition: 0.3s;
+}
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+        <div class="logo" style="display: flex;">
+            <img src="{% static 'images/logo.png' %}" alt="" style="width: 50px; height: 50px;">
+            <h2>Mon Etab</h2>
+        </div>
+        
+        <hr style="background-color: #575757;">
+        <ul style="height: 420px;">
+            <li><a href="#"><i class="fas fa-tachometer-alt"></i> Tableau de Bord</a></li>
+            <li><a href="#"><i class="fas fa-user-graduate"></i> Éleve</a></li>
+            <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> Professeurs</a></li>
+            <li><a href="#"><i class="fas fa-user-graduate"></i> Utilisateurs</a></li>
+            <li><a href="#"><i class="fas fa-id-badge"></i> Rapport</a></li>
+            
+            
+        </ul>
+        <hr>
+        <ul>
+            <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> deconnexion</a></li>
+        </ul>
+        
+    </div>
+
+      <!-- Main Content -->
+      <div class="flex-1 p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h1 class="text-2xl font-semibold">Élèves (2)</h1>
+          <a
+            href="#"
+            class="flex items-center text-blue-500 hover:text-blue-700"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 4v16m8-8H4"
+              />
+            </svg>
+            Nouvel élève
+          </a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow overflow-auto">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Nom
+                </th>
+                <th
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Prénom
+                </th>
+                <th
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Vacant
+                </th>
+                <th
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Classe
+                </th>
+                <th
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Matricule
+                </th>
+                <th
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Âge
+                </th>
+                <th
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Téléphone
+                </th>
+                <th
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Ville
+                </th>
+                <th
+                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap">KOFFI</td>
+                <td class="px-6 py-4 whitespace-nowrap">George</td>
+                <td class="px-6 py-4 whitespace-nowrap">oui</td>
+                <td class="px-6 py-4 whitespace-nowrap">Tle</td>
+                <td class="px-6 py-4 whitespace-nowrap">GDJ7GDGD</td>
+                <td class="px-6 py-4 whitespace-nowrap">25</td>
+                <td class="px-6 py-4 whitespace-nowrap">0123456789</td>
+                <td class="px-6 py-4 whitespace-nowrap">Bonoua</td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <button
+                    class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-4 rounded"
+                  ><a href="modifierProfesseur.html"> Modifier</a>
+                   
+                  </button>
+                  <button
+                    class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded ml-2"
+                    onclick="supprimerElement()">
+                  Supprimer</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap">KONÉ</td>
+                <td class="px-6 py-4 whitespace-nowrap">Sali</td>
+                <td class="px-6 py-4 whitespace-nowrap">non</td>
+                <td class="px-6 py-4 whitespace-nowrap">2nd</td>
+                <td class="px-6 py-4 whitespace-nowrap">GDJ7GDGD</td>
+                <td class="px-6 py-4 whitespace-nowrap">22</td>
+                <td class="px-6 py-4 whitespace-nowrap">0123456789</td>
+                <td class="px-6 py-4 whitespace-nowrap">Abidjan</td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <button
+                    class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-4 rounded"
+                  >
+                    Modifier
+                  </button>
+                  <button
+                  onclick=GenAlert()
+                    class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded ml-2"
+                    onclick="supprimerElement()">
+                    Supprimer
+                  </button>
+                  <div id="monElement">Cet élément sera supprimé</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+<script>
+  function supprimerElement() {
+    if (confirm("Êtes-vous sûr de vouloir supprimer cet élément ?")) {
+        // Si l'utilisateur clique sur "OK", on supprime l'élément
+        const element = document.getElementById('monElement');
+        element.remove();
+    }
+}
+</script>
