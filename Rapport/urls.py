@@ -1,6 +1,8 @@
 from .views import rapport
 from django.urls import path
 
+app_name= 'rapport'
+
 urlpatterns=[
-    path( '', rapport),
+    path( '', rapport, name= 'rapport'),
 ]

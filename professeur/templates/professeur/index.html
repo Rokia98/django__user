@@ -1,201 +1,51 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire d'Inscription</title>
-    <style>
-        body{
-            display: flex;
-            /* justify-content: center; /* Centrage horizontal */
-            /* align-items: center; Centrage vertical */ 
-            height: 100vh; /* Hauteur du viewport */
-            margin: 0;
-            background-color: #f8f9fa;
-        }
-        .container{
-            display: grid;
-            grid-template-columns: 1fr 2fr; /* Définir les colonnes de tailles différentes */
-            gap: 50px; /* Espacement entre les blocs */
-            margin: 0 auto;
-            place-items: center;
-           
-        }
-        h1 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group-right {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"], input[type="email"], input[type="date"] {
-            width: 100%;    /* Largeur flexible */
-            max-width: 300px; /* Largeur maximale de 300px */
-            padding: 10px;
-            border: 3.5px solid #0c0c0c;
-            border-radius: 4px;
-        }
-        button {
-            padding: 5px 40px;
-            border: 20;
-            border-radius: 5px;
-            color: #fff;
-            background-color: #b40101;
-            cursor: pointer;
-            font-size: 16px;
-            border: 3.5px solid #0c0c0c;
-            
-        }
-        button[type="reset"] {
-            background-color: #08b433;
-            margin-right: 250px;
-            border-radius: 2px;
-            color: #fff;
-            cursor: pointer;
-            font-size: 16px;
-            padding: 5px 30px;
-            border: 3.5px solid #0c0c0c;
-        }
-        
-        button:hover {
-            opacity: 0.9;
-        }.form-check{
-            text-align: center;  /* Centre le texte horizontalement */
-            line-height: 1.8;    /* Augmente l'espacement entre les lignes */
-            margin: 20px;        /* Ajoute un espacement autour du texte */
-            padding: 10px;       /* Ajoute un espace interne autour du texte */
-            font-size: 18px;     /* Taille de la police */
-            color: #333;         /* Couleur du texte */
-        }
-        body{
-            display: flex;
-            /* justify-content: center; Centrage horizontal */
-            /* align-items: center; Centrage vertical */
-            height: 100vh; /* Hauteur du viewport */
-            margin: 0;
-            background-color: #f8f9fa;
-        }
-        .sidebar {
-    width: 250px;
-    background: #b6adad;
-    color:#0c0c0c;
-    padding: 15px;
-    position: fixed;
-    height: 100%;
-}
+{%extends "base.html"%}
 
-.sidebar h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin: 20px 0;
-}
-
-.sidebar ul li a {
-    color: #070707;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-}
-
-.sidebar ul li a:hover {
-    color: #5833dd;
-    padding-left: 10px;
-    transition: 0.3s;
-}
-    </style>
-</head>
-<body>
-    <div class="sidebar">
-        <div class="logo" style="display: flex;">
-            <img src="{% static 'images/logo.png' %}" alt="" style="width: 50px; height: 50px;">
-            <h2>Mon Etab</h2>
-        </div>
-        
-        <hr style="background-color: #575757;">
-        <ul style="height: 420px;">
-            <li><a href="#"><i class="fas fa-tachometer-alt"></i> Tableau de Bord</a></li>
-            <li><a href="#"><i class="fas fa-user-graduate"></i> Éleve</a></li>
-            <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> Professeurs</a></li>
-            <li><a href="#"><i class="fas fa-user-graduate"></i> Utilisateurs</a></li>
-            <li><a href="#"><i class="fas fa-id-badge"></i> Rapport</a></li>
-            
-            
-        </ul>
-        <hr>
-        <ul>
-            <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> deconnexion</a></li>
-        </ul>
-        
+{%block content%}  
+<form>
+    <h1>Ajouter un professeur</h1>
+    <div class="form-group">
+        <input type="text" id="firstname" name="firstname" placeholder="Nom de l'élève" >
     </div>
+    <div class="form-group">
+        <input type="text" id="lastname" name="lastname" placeholder="prenom de l'élève" >
+    </div>
+    <div class="form-group" style="display: flex; text-align: center;">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" >
+        <label class="form-check-label" for="flexRadioDefault1">
+          Femme</label>
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" >
+        <label class="form-check-label" for="flexRadioDefault1">
+            Homme
+        </label>
 
-<div class="container">
-    
-    <form>
-        <h1>Ajouter un Eleve</h1>
-        <div class="form-group">
-            <input type="text" id="firstname" name="firstname" placeholder="Nom de l'élève" >
-        </div>
-        <div class="form-group">
-            <input type="text" id="lastname" name="lastname" placeholder="prenom de l'élève" >
-        </div>
-        <div class="form-group" style="display: flex; text-align: center;">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" >
-            <label class="form-check-label" for="flexRadioDefault1">
-              Femme</label>
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" >
-            <label class="form-check-label" for="flexRadioDefault1">
-                Homme
-            </label>
-
-          </div>
-        <div class="form-group-right">
-            <input type="date" id="firstname" name="date"  placeholder=" / / ">
-        </div>
-    </form>
-    <section style="float: right;">
-        <div class="form-group-right">
-            <select id="classe" name="classe" style="width: 100%;    /* Largeur flexible */
-            max-width: 300px; /* Largeur maximale de 300px */ margin-bottom: 120px; margin-top: 85px;
-            border: 3.5px solid #0c0c0c; padding: 10px;
-            border-radius: 4px;">
-                <option value="other">selectionner la matiere</option>
-                <option value="male">Math</option>
-                <option value="female">Physique</option>
-                <option value="other">EPS</option>
-                <option value="male">Anglais</option>
-                <option value="female">SVT</option>
-                <option value="other">Philosophie</option>
-                <option value="other">Francais</option>
-            </select>
-        </div>
-        <div class="form-group-right">
-            <input type="text" id="firstname" name="firstname" placeholder="0123456789" >
-        </div>
-        <div class="form-group">
-            <input type="text" id="lastname" name="lastname" placeholder="Dabou" >
-        </div>
-    </section>
+      </div>
+    <div class="form-group-right">
+        <input type="date" id="firstname" name="date"  placeholder=" / / ">
+    </div>
+</form>
+<section style="float: right;">
+    <div class="form-group-right">
+        <select id="classe" name="classe" style="width: 100%;    /* Largeur flexible */
+        max-width: 300px; /* Largeur maximale de 300px */ margin-bottom: 120px; margin-top: 85px;
+        border: 3.5px solid #0c0c0c; padding: 10px;
+        border-radius: 4px;">
+            <option value="other">selectionner la matiere</option>
+            <option value="male">Math</option>
+            <option value="female">Physique</option>
+            <option value="other">EPS</option>
+            <option value="male">Anglais</option>
+            <option value="female">SVT</option>
+            <option value="other">Philosophie</option>
+            <option value="other">Francais</option>
+        </select>
+    </div>
+    <div class="form-group-right">
+        <input type="text" id="firstname" name="firstname" placeholder="0123456789" >
+    </div>
+    <div class="form-group">
+        <input type="text" id="lastname" name="lastname" placeholder="Dabou" >
+    </div>
+</section>
 <button type="submit">Annuler</button>
-<button type="reset">Enregistrer</button>    
-       
-</div>
-</body>
-</html>
+<button type="reset">Enregistrer</button>   
+{%endblock%}

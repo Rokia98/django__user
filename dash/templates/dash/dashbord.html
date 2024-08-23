@@ -1,71 +1,9 @@
+
+{%extends "base.html"%}
+{% block content %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de Bord - Gestion d'École</title>
-
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body{
-            display: flex;
-            /* justify-content: center; Centrage horizontal */
-            /* align-items: center; Centrage vertical */
-            height: 100vh; /* Hauteur du viewport */
-            margin: 0;
-            background-color: #f8f9fa;
-        }
-        .sidebar {
-    width: 250px;
-    background: #b6adad;
-    color:#0c0c0c;
-    padding: 15px;
-    /* position: fixed; */
-    height: 100%;
-}
-
-.sidebar h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin: 20px 0;
-}
-
-.sidebar ul li a {
-    color: #070707;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-}
-
-.sidebar ul li a:hover {
-    color: #5833dd;
-    padding-left: 10px;
-    transition: 0.3s;
-}
-/* Media Queries pour les écrans petits */
-@media (max-width: 768px) {
-    .sidebar {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #333;
-        width: 100%;
-        gap: 0;
-    }
-}
-.main-content {
+<style>
+    .main-content {
     margin-left: 300px;
     padding: 20px;
     width: 100%;
@@ -150,31 +88,9 @@ header h2 {
     }
 }
 
+
+
     </style>
-</head>
-<body>
-    <div class="sidebar">
-        <div class="logo" style="display: flex;">
-            <img src="{% static 'images/logo.png' %}" alt="" style="width: 50px; height: 50px;">
-            <h2>Mon Etab</h2>
-        </div>
-        
-        <hr style="background-color: #575757;">
-        <ul style="height: 420px;">
-            <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Tableau de Bord</a></li>
-            <li><a href="Eleve.html"><i class="fas fa-user-graduate"></i> Éleve</a></li>
-            <li><a href="professeur.html"><i class="fas fa-chalkboard-teacher"></i> Professeurs</a></li>
-            <li><a href="utilsateur.html"><i class="fas fa-user-graduate"></i> Utilisateurs</a></li>
-            <li><a href="rapport.html"><i class="fas fa-id-badge"></i> Rapport</a></li>
-            
-            
-        </ul>
-        <hr>
-        <ul>
-            <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> deconnexion</a></li>
-        </ul>
-        
-    </div>
     
     <div class="main-content">
         <header>
@@ -214,4 +130,4 @@ header h2 {
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{% static '/script/js1.js' %}"></script>
 </body>
-</html>
+{% endblock %}
