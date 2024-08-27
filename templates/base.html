@@ -51,8 +51,8 @@
             padding: 5px 40px;
             border: 20;
             border-radius: 5px;
-            color: #fff;
-            background-color: #b40101;
+            color: #0c0c0c;
+            background-color: #66d5dd;
             cursor: pointer;
             font-size: 16px;
             border: 3.5px solid #0c0c0c;
@@ -121,6 +121,7 @@
     color: #5833dd;
     padding-left: 10px;
     transition: 0.3s;
+    text-decoration: none;
 }
     </style>
 </head>
@@ -134,9 +135,9 @@
         <hr style="background-color: #575757;">
         <ul style="height: 420px;">
             <li><a href="{% url 'dash:dash' %}"><i class="fas fa-tachometer-alt"></i> Tableau de Bord</a></li>
-            <li><a href="{% url 'Eleve:index' %}"><i class="fas fa-user-graduate"></i> Éleve</a></li>
-            <li><a href="{% url 'professeur:index' %}"><i class="fas fa-chalkboard-teacher"></i> Professeurs</a></li>
-            <li><a href="{% url 'utilisateur:index' %}"><i class="fas fa-user-graduate"></i> Utilisateurs</a></li>
+            <li><a href="{% url 'Eleve:list' %}"><i class="fas fa-user-graduate"></i> Éleve</a></li>
+            <li><a href="{% url 'professeur:list' %}"><i class="fas fa-chalkboard-teacher"></i> Professeurs</a></li>
+            <li><a href="{% url 'utilisateur:list' %}"><i class="fas fa-user-graduate"></i> Utilisateurs</a></li>
             <li><a href="{% url 'rapport:rapport' %}"><i class="fas fa-id-badge"></i> Rapport</a></li>
             
             

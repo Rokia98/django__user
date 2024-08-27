@@ -1,0 +1,102 @@
+
+{%extends 'base.html'%}
+{%block content%}
+<style>
+table {
+  width: 600px;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+th, td {
+  border: 2px solid #000;
+  padding: 10px;
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+}
+
+th {
+  background-color: #ffffff;
+}
+
+/* Button styles */
+button {
+  margin-right: 5px;
+  cursor: pointer;
+}
+.back-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 70px;
+}
+</style>
+<div class="content1">
+  <div class="back-button">
+      <h1 style="color:black;">Liste des profs</h1>
+      <a href="{% url 'professeur:edit' %}"><i class="fas fa-arrow-left"></i>Nouveau professeur</a>
+  </div>
+  <table>
+      <thead>
+          <tr>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Genre</th>
+              <th>Classe</th>
+              <th>Matricule</th>
+              <th>Age</th>
+              <th>Téléphone</th>
+              <th>Ville</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+        {% for teacher in teacher %}
+          
+          <tr>
+              <td>{{ teacher.first_name}}</td>
+              <td>{{teacher.last_name}}</td>
+              <td>{{teacher.gender}}</td>
+              <td>{{teacher.matricule}}</td>
+              <td>{{teacher.date}}</td>
+              <td>{{teacher.matiere}}</td>
+              <td>{{teacher.telephone}}</td>
+              <td>{{teacher.city}}</td>
+              <td>
+                <div style="display: flex;">
+                  <button type="submit" name="modifier" class="inscrire"><a href="{% url 'professeur:update' teacher.id %}">Modifier</a></button>
+                  <button><a href="{% url 'professeur:delete' teacher.pk %}">Supprimer</a></button>
+              </div>
+              </td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+</div>
+<script src="scripte.js"></script>
+<script>
+  function confirmerSuppression(event) {
+      event.preventDefault(); // Empêche l'action par défaut du bouton
+  
+      // Afficher une boîte de confirmation
+      const confirmation = confirm("Attention, vous êtes sur le point de supprimer cet élève ! Voulez-vous vraiment continuer ?");
+  
+      // Si l'utilisateur clique sur "OK", la suppression est confirmée
+      if (confirmation) {
+          // Ajoutez ici le code pour supprimer l'élève
+          alert('L\'élève a été supprimé.');
+      } else {
+          // Si l'utilisateur clique sur "Annuler", la suppression est annulée
+          alert('Suppression annulée.');
+      }
+  }
+  
+  // Attacher l'événement de clic aux boutons "Supprimer"
+  document.querySelectorAll('button[style*="rgb(212, 21, 21)"]').forEach(button => {
+      button.addEventListener('click', confirmerSuppression);
+  });
+  </script>
+
+{%endblock%}

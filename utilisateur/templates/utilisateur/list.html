@@ -1,0 +1,70 @@
+
+{%extends 'base.html'%}
+{%block content%}
+<style>
+table {
+  width: 600px;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+th, td {
+  border: 2px solid #000;
+  padding: 10px;
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+}
+
+th {
+  background-color: #ffffff;
+}
+
+/* Button styles */
+button {
+  margin-right: 5px;
+  cursor: pointer;
+ 
+}
+.back-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 70px;
+}
+</style>
+<div class="content1">
+  <div class="back-button">
+      <h1 style="color:black;">Liste des élèves</h1>
+      <a href="{% url 'utilisateur:edit' %}"><i class="fas fa-arrow-left"></i>Nouveau élève</a>
+  </div>
+  <table>
+      <thead>
+          <tr>
+              <th>Pseudo</th>
+              <th>Mot de Pass</th>
+              <th>Date de creation</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+        {% for utilisateur in utilisateur %}
+          
+        <tr>
+            <td>{{ utilisateur.pseudo}}</td>
+            <td>{{utilisateur.password}}</td>
+            <td>{{utilisateur.created_at}}</td>
+            
+            <td>
+                <div style="display: flex;">
+                  <button type="submit" name="modifier" class="inscrire"><a href="{% url 'utilisateur:update' user.id %}">Modifier</a></button>
+                  <button><a href="{% url 'utilisateur:delete' user.pk %}">Supprimer</a></button>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+</div>
+{%endblock%}

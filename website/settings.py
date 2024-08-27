@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     'utilisateur',
     'professeur',
     'Rapport',
-    'crispy',
-    'crispy_boostrap4',
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -134,5 +134,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CRISPY_AUTO_TEMPLATE_PACKS = 'boostrap4'
-CRISPY_TEMPLATE_PACKS ='boostrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = ["bootstrap4"]  # Allowed template packs
+CRISPY_TEMPLATE_PACK = "bootstrap4"  # Default template pack

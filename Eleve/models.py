@@ -1,17 +1,29 @@
 from django.db import models
 
-# Create your models here.
+# Définir les choix correctement pour les classes
+CHOICES_CLASSE = (
+   ('Terminale', 'Terminale'),
+    ('Premiere', 'Première'),
+    ('Seconde', 'Seconde'),
+    ('Troisieme', 'Troisième'),
+    ('Quatrieme', 'Quatrième'),
+    ('Cinqieme', 'Cinquième'),
+    ('Sixieme', 'Sixième'),
+)
 
-class Eleve(models.Model):
-    first_name = models.CharField(max_length=100)  # Prénom de l'élève
-    last_name = models.CharField(max_length=100)   # Nom de famille de l'élève
-    birth_date = models.DateField()                # Date de naissance
-    matricule = models.EmailField()  
-    city = models.CharField()  
-    niveau = models.CharField()  
-    genre=  models.CharField()              
-    phone_number = models.CharField(max_length=15) # Numéro de téléphone
 
-    def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+GENDER_CHOICES = (
+    ('m', 'Male'),
+    ('f', 'Female'),
+)
 
+# Modèle correspondant au formulaire
+class Student(models.Model):
+    first_name = models.CharField(max_length=250)
+    last_name = models.CharField(max_length=250)
+    gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
+    matricule = models.CharField(max_length=250)
+    date = models.DateField()
+    classe = models.CharField(max_length=20, choices=CHOICES_CLASSE, verbose_name="classe")
+    telephone = models.CharField(max_length=15)
+    city = models.CharField(max_length=250)

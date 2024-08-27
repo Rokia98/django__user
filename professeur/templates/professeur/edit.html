@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<section class="inscription">
+    <h2 class="titre">Ajouter un PROFESSEUR</h2>
+    <form action="" method="post" class="box-form" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form|crispy }}  <!-- Utilisation correcte de crispy_forms_tags -->
+        <div class="btn">
+            <button type="submit" name="inscrire" class="annuler">
+                <a href="{% url 'professeur:edit' %}">Annuler</a>
+            </button>
+            <button type="submit" name="enregistrer" class="inscrire">Enregistrer</button>
+        </div>
+
+    </form>
+    
+</section>
+{% endblock %}

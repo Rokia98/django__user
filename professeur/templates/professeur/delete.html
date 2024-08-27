@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="titre">Supprimer le Professeur</h2>
+<p>Êtes-vous sûr de vouloir supprimer {{ teacher.first_name }} {{ teacher.last_name }} ?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirmer</button>
+    <a href="{% url 'professeur:list' %}">Annuler</a>
+</form>
+{% endblock %}
