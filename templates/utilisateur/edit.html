@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%block content%}
+{% load crispy_forms_tags %}
+<section class="inscription">
+    <h2 class="titre">Ajouter un Utilisateur</h2>
+    <form action="" method="post" class="box-form" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div id="div_id_pseudo" class="form-group"> <label for="id_pseudo" class=" requiredField">
+            Pseudo<span class="asteriskField">*</span> </label> <div> <input type="text" name="username" maxlength="250" class="textinput form-control" required="" id="id_pseudo"> </div> </div>
+
+            <div id="div_id_password" class="form-group"> <label for="id_password" class=" requiredField">
+                Password<span class="asteriskField">*</span> </label> <div> <input type="text" name="password" maxlength="250" class="textinput form-control" required="" id="id_password"> </div> </div>
+        <!-- Case à cocher pour les termes et conditions -->
+
+        <div class="btn">
+            <button type="submit" class="annuler"><a href="{% url 'utilisateur:edit' %}"> Annuler </a></button>
+            <button type="submit"  class="inscrire">Enregistrer</button>
+        </div>
+        
+    </form>
+</section>
+{%endblock%}

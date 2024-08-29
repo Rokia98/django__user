@@ -67,8 +67,8 @@ button {
             <td>
               <div style="display: flex;">
                 <button type="submit" name="modifier" class="inscrire"><a href="{% url 'Eleve:update' student.id %}">Modifier</a></button>
-                <button><a href="{% url 'Eleve:delete' student.pk %}">Supprimer</a></button>
-            </div>
+                <button type="submit" name="modifier" class="inscrire"><a href="{% url 'Eleve:delete' student.id %}">Supprimer</a></button>
+                </div>
             </td>
         </tr>
         {% endfor %}

@@ -10,7 +10,7 @@ class UserForms(forms.Form):
 
 class UserFormsModel(forms.ModelForm):
     class Meta:
-        model = User 
+        model = Users 
         fields = ["pseudo", "password"]
         
 

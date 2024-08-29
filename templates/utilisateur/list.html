@@ -52,14 +52,14 @@ button {
         {% for utilisateur in utilisateur %}
           
         <tr>
-            <td>{{ utilisateur.pseudo}}</td>
+            <td>{{ utilisateur.username}}</td>
             <td>{{utilisateur.password}}</td>
             <td>{{utilisateur.created_at}}</td>
             
             <td>
                 <div style="display: flex;">
                   <button type="submit" name="modifier" class="inscrire"><a href="{% url 'utilisateur:update' user.id %}">Modifier</a></button>
-                  <button><a href="{% url 'utilisateur:delete' user.pk %}">Supprimer</a></button>
+                  <button type="submit" name="modifier" class="inscrire"><a href="{% url 'utilisateur:delete' user.id %}">Supprimer</a></button>
                 </div>
             </td>
         </tr>
